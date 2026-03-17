@@ -559,3 +559,20 @@ If you were already using the `surplus` key via `componentsProps`, move it to `s
 -<AvatarGroup componentsProps={{ surplus: { className: 'my-class' } }}>
 +<AvatarGroup slotProps={{ surplus: { className: 'my-class' } }}>
 ```
+#### Divider deprecated props removed
+
+Use the [codemod](https://github.com/mui/material-ui/tree/HEAD/packages/mui-codemod#divider-props) below to migrate the code as described in the following sections:
+
+```bash
+npx @mui/codemod@latest deprecations/divider-props <path>
+```
+
+The deprecated `Divider` prop have been removed.
+Use the `sx` prop instead:
+
+```diff
+ <Divider
+-  light
++  sx={{ opacity: 0.6 }}
+ />
+```
